@@ -50,43 +50,63 @@
 //        }
 //    }
 //////////////////////////////////////////////////////////////////////////////////
+//class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("Text Report Generator");
+
+//            // Create a StringBuilder instance to store the report
+//            StringBuilder report = new StringBuilder();
+
+//            //Add the header and the current date to the report
+//            report.AppendLine("MY DAILY REPORT");
+//            report.AppendLine($"Date: {DateTime.Now.ToString("dd.MM.yyyy HH:mm")}");
+//            report.AppendLine("Events:");
+
+//            bool isEnteringEvents = true;
+//            int eventCount = 1;
+
+//            //Loop to get events from the user
+//            while (isEnteringEvents)
+//            {
+//                Console.Write($"Enter event #{eventCount} (or type 'exit' to finish): ");
+//                string input = Console.ReadLine();
+
+//                if (input.ToLower() == "exit")
+//                {
+//                    isEnteringEvents = false;
+//                }
+//                else if (input.Trim() != "") // Make sure the input is not empty
+//                {
+//                    // Append the event to the StringBuilder with a dash
+//                    report.AppendLine($"- {input}");
+//                    eventCount++;
+//                }
+//            }
+//            //Print the final generated report to the console
+//            Console.WriteLine("\n--- GENERATED REPORT ---");
+//            Console.WriteLine(report.ToString());
+//            Console.ReadLine();
+//        }
+//    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Text Report Generator");
+            Console.WriteLine("Remove Spaces");
 
-            // Create a StringBuilder instance to store the report
-            StringBuilder report = new StringBuilder();
+            // Ask the user to enter a string with words separated by commas
+            Console.Write("Enter a string with commas (e.g., apple, banana, orange): ");
+            string input = Console.ReadLine();
 
-            //Add the header and the current date to the report
-            report.AppendLine("MY DAILY REPORT");
-            report.AppendLine($"Date: {DateTime.Now.ToString("dd.MM.yyyy HH:mm")}");
-            report.AppendLine("Events:");
+            // Use the Replace method to replace all spaces with an empty string ("")
+            string result = input.Replace(" ", "");
 
-            bool isEnteringEvents = true;
-            int eventCount = 1;
-
-            //Loop to get events from the user
-            while (isEnteringEvents)
-            {
-                Console.Write($"Enter event #{eventCount} (or type 'exit' to finish): ");
-                string input = Console.ReadLine();
-
-                if (input.ToLower() == "exit")
-                {
-                    isEnteringEvents = false;
-                }
-                else if (input.Trim() != "") // Make sure the input is not empty
-                {
-                    // Append the event to the StringBuilder with a dash
-                    report.AppendLine($"- {input}");
-                    eventCount++;
-                }
-            }
-            //Print the final generated report to the console
-            Console.WriteLine("\n--- GENERATED REPORT ---");
-            Console.WriteLine(report.ToString());
-            Console.ReadLine();
+            //Print the result
+            Console.WriteLine("\nResult without spaces:");
+            Console.WriteLine(result);
         }
     }
